@@ -6,9 +6,12 @@
     xmlns:local="clr-namespace:SoFit"
     Title="SoFit">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+  <TabBar>
+    <ShellContent Title="Home" Route="home" ContentTemplate="{DataTemplate local:MainPage}" />
+    <ShellContent Title="Split" Route="split" ContentTemplate="{DataTemplate local:SplitPage}" />
+    <ShellContent Title="Board" Route="board" ContentTemplate="{DataTemplate local:BoardPage}" />
+    <ShellContent Title="Calendar" Route="calendar" ContentTemplate="{DataTemplate local:CalendarPage}" />
+    <ShellContent Title="Settings" Route="settings" ContentTemplate="{DataTemplate local:SettingsPage}" />
+  </TabBar>
 
 </Shell>
