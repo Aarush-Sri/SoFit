@@ -13,7 +13,7 @@ namespace SoFit
         // Goal Details Popup
         private async void OnGoalDetailsClicked(object? sender, EventArgs e)
         {
-            await DisplayAlert("Today's Goal Details",
+            await DisplayAlert("Today's Goal details",
                 "🎯 Daily Goal Information\n\n" +
                 "1000 calories - Cardio focused\n" +
                 "Target: 10,000 steps\n" +
