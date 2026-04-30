@@ -1,4 +1,8 @@
 ﻿using Microsoft.Maui.Controls;
+<<<<<<< HEAD
+=======
+using Microsoft.Maui.Graphics;
+>>>>>>> master
 
 namespace SoFit
 {
@@ -9,8 +13,25 @@ namespace SoFit
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         // Start Workout Popup
         private async void OnStartWorkoutClicked(object sender, EventArgs e)
+=======
+        // Goal Details Popup
+        private async void OnGoalDetailsClicked(object? sender, EventArgs e)
+        {
+            await DisplayAlert("Today's Goal details",
+                "🎯 Daily Goal Information\n\n" +
+                "1000 calories - Cardio focused\n" +
+                "Target: 10,000 steps\n" +
+                "Goal: 2 workouts minimum\n\n" +
+                "Progress: 75% complete",
+                "Close");
+        }
+
+        // Start Workout Popup
+        private async void OnStartWorkoutClicked(object? sender, EventArgs e)
+>>>>>>> master
         {
             string result = await DisplayActionSheet("Select Workout Type",
                 "Cancel",
@@ -28,7 +49,11 @@ namespace SoFit
         }
 
         // Log Activity Popup
+<<<<<<< HEAD
         private async void OnLogActivityClicked(object sender, EventArgs e)
+=======
+        private async void OnLogActivityClicked(object? sender, EventArgs e)
+>>>>>>> master
         {
             await DisplayAlert("Log Activity", 
                 "Activity logged:\n\n" +
@@ -38,6 +63,138 @@ namespace SoFit
                 "Great work! Keep it up! 💪",
                 "OK");
         }
+<<<<<<< HEAD
         // navigation features removed - main page simplified
+=======
+
+        // Navigation - Home
+        private async void OnNavHomeClicked(object? sender, EventArgs e)
+        {
+            HomeBtn.BackgroundColor = Color.FromArgb("#0a4d80");
+            HomeBtn.TextColor = Colors.White;
+            SplitBtn.BackgroundColor = Colors.Transparent;
+            SplitBtn.TextColor = Color.FromArgb("#666666");
+            BoardBtn.BackgroundColor = Colors.Transparent;
+            BoardBtn.TextColor = Color.FromArgb("#666666");
+            CalendarBtn.BackgroundColor = Colors.Transparent;
+            CalendarBtn.TextColor = Color.FromArgb("#666666");
+            SettingsBtn.BackgroundColor = Colors.Transparent;
+            SettingsBtn.TextColor = Color.FromArgb("#666666");
+
+            await DisplayAlert("Home", "You are already on the Home page", "OK");
+        }
+
+        // Navigation - Split (Workout Split)
+        private async void OnNavSplitClicked(object? sender, EventArgs e)
+        {
+            string result = await DisplayActionSheet("Workout Splits",
+                "Cancel",
+                null,
+                "Push/Pull/Legs",
+                "Upper/Lower",
+                "Full Body",
+                "PPL Advanced",
+                "View Custom Split");
+
+            if (!string.IsNullOrEmpty(result) && result != "Cancel")
+            {
+                await DisplayAlert("Workout Split", $"Selected: {result}\n\nLoading split details...", "OK");
+            }
+        }
+
+        // Navigation - Board (Stats/Analytics)
+        private async void OnNavBoardClicked(object? sender, EventArgs e)
+        {
+            await DisplayAlert("Analytics Board",
+                "📊 Your Statistics:\n\n" +
+                "This Week:\n" +
+                "  • Workouts: 3\n" +
+                "  • Total Duration: 2h 15m\n" +
+                "  • Calories Burned: 2,250\n\n" +
+                "This Month:\n" +
+                "  • Workouts: 12\n" +
+                "  • Total Duration: 9h 30m\n" +
+                "  • Calories Burned: 8,500",
+                "Close");
+        }
+
+        // Navigation - Calendar
+        private async void OnNavCalendarClicked(object? sender, EventArgs e)
+        {
+            string result = await DisplayActionSheet("Calendar",
+                "Cancel",
+                null,
+                "View Monthly Calendar",
+                "View Weekly Schedule",
+                "Schedule Workout",
+                "View Completed Workouts");
+
+            if (!string.IsNullOrEmpty(result) && result != "Cancel")
+            {
+                await DisplayAlert("Calendar", result, "OK");
+            }
+        }
+
+        // Navigation - Settings
+        private async void OnNavSettingsClicked(object? sender, EventArgs e)
+        {
+            string result = await DisplayActionSheet("Settings",
+                "Cancel",
+                null,
+                "⚙️ General Settings",
+                "👤 Profile",
+                "🔔 Notifications",
+                "📊 Data & Privacy",
+                "ℹ️ About SoFit");
+
+            if (!string.IsNullOrEmpty(result) && result != "Cancel")
+            {
+                if (result.Contains("General"))
+                {
+                    await DisplayAlert("General Settings",
+                        "• Theme: Dark Mode\n" +
+                        "• Units: Metric (kg, km)\n" +
+                        "• Language: English",
+                        "OK");
+                }
+                else if (result.Contains("Profile"))
+                {
+                    await DisplayAlert("Profile",
+                        "Name: Alex\n" +
+                        "Age: 28\n" +
+                        "Height: 6'0\"\n" +
+                        "Weight: 185 lbs\n" +
+                        "Goal: Build Muscle",
+                        "OK");
+                }
+                else if (result.Contains("Notifications"))
+                {
+                    await DisplayAlert("Notifications",
+                        "✓ Workout Reminders: ON\n" +
+                        "✓ Daily Motivation: ON\n" +
+                        "✓ Goal Achievements: ON\n" +
+                        "✓ Weekly Summary: ON",
+                        "OK");
+                }
+                else if (result.Contains("Data"))
+                {
+                    await DisplayAlert("Data & Privacy",
+                        "Your data is securely stored.\n\n" +
+                        "Last Backup: Today\n" +
+                        "Storage Used: 45 MB",
+                        "OK");
+                }
+                else if (result.Contains("About"))
+                {
+                    await DisplayAlert("About SoFit",
+                        "SoFit v1.0.0\n" +
+                        "Your Complete Fitness Companion\n\n" +
+                        "© 2024 SoFit Inc.\n" +
+                        "Made with ❤️ for fitness enthusiasts",
+                        "OK");
+                }
+            }
+        }
+>>>>>>> master
     }
 }
