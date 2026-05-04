@@ -1,8 +1,5 @@
 ﻿using Microsoft.Maui.Controls;
-<<<<<<< HEAD
-=======
 using Microsoft.Maui.Graphics;
->>>>>>> master
 
 namespace SoFit
 {
@@ -13,12 +10,8 @@ namespace SoFit
             InitializeComponent();
         }
 
-<<<<<<< HEAD
-        // Start Workout Popup
-        private async void OnStartWorkoutClicked(object sender, EventArgs e)
-=======
         // Goal Details Popup
-        private async void OnGoalDetailsClicked(object? sender, EventArgs e)
+        private async void OnGoalDetailsClicked(object sender, EventArgs e)
         {
             await DisplayAlert("Today's Goal details",
                 "🎯 Daily Goal Information\n\n" +
@@ -30,8 +23,7 @@ namespace SoFit
         }
 
         // Start Workout Popup
-        private async void OnStartWorkoutClicked(object? sender, EventArgs e)
->>>>>>> master
+        private async void OnStartWorkoutClicked(object sender, EventArgs e)
         {
             string result = await DisplayActionSheet("Select Workout Type",
                 "Cancel",
@@ -49,11 +41,7 @@ namespace SoFit
         }
 
         // Log Activity Popup
-<<<<<<< HEAD
         private async void OnLogActivityClicked(object sender, EventArgs e)
-=======
-        private async void OnLogActivityClicked(object? sender, EventArgs e)
->>>>>>> master
         {
             await DisplayAlert("Log Activity", 
                 "Activity logged:\n\n" +
@@ -63,12 +51,8 @@ namespace SoFit
                 "Great work! Keep it up! 💪",
                 "OK");
         }
-<<<<<<< HEAD
-        // navigation features removed - main page simplified
-=======
-
         // Navigation - Home
-        private async void OnNavHomeClicked(object? sender, EventArgs e)
+        private async void OnNavHomeClicked(object sender, EventArgs e)
         {
             HomeBtn.BackgroundColor = Color.FromArgb("#0a4d80");
             HomeBtn.TextColor = Colors.White;
@@ -85,7 +69,7 @@ namespace SoFit
         }
 
         // Navigation - Split (Workout Split)
-        private async void OnNavSplitClicked(object? sender, EventArgs e)
+        private async void OnNavSplitClicked(object sender, EventArgs e)
         {
             string result = await DisplayActionSheet("Workout Splits",
                 "Cancel",
@@ -103,7 +87,7 @@ namespace SoFit
         }
 
         // Navigation - Board (Stats/Analytics)
-        private async void OnNavBoardClicked(object? sender, EventArgs e)
+        private async void OnNavBoardClicked(object sender, EventArgs e)
         {
             await DisplayAlert("Analytics Board",
                 "📊 Your Statistics:\n\n" +
@@ -119,7 +103,7 @@ namespace SoFit
         }
 
         // Navigation - Calendar
-        private async void OnNavCalendarClicked(object? sender, EventArgs e)
+        private async void OnNavCalendarClicked(object sender, EventArgs e)
         {
             string result = await DisplayActionSheet("Calendar",
                 "Cancel",
@@ -136,7 +120,7 @@ namespace SoFit
         }
 
         // Navigation - Settings
-        private async void OnNavSettingsClicked(object? sender, EventArgs e)
+        private async void OnNavSettingsClicked(object sender, EventArgs e)
         {
             string result = await DisplayActionSheet("Settings",
                 "Cancel",
@@ -195,6 +179,5 @@ namespace SoFit
                 }
             }
         }
->>>>>>> master
     }
 }

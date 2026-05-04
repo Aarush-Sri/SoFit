@@ -2,56 +2,92 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SoFit.MainPage"
-<<<<<<< HEAD
-             BackgroundColor="Black">
+             BackgroundColor="#1a1a1a">
 
-    <Grid RowDefinitions="Auto,*,Auto" Padding="12">
+    <Grid RowDefinitions="*,70" RowSpacing="0" BackgroundColor="#1a1a1a">
+        <!-- Main Content -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="#1a1a1a">
 
-        <!-- Header -->
-        <Label Text="Home" FontSize="22" FontAttributes="Bold" TextColor="White" VerticalOptions="Start" />
+                <!-- Header -->
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="SoFit" FontSize="32" FontAttributes="Bold" TextColor="White" />
+                    <Label Text="Welcome back, Alex!" FontSize="16" TextColor="#999999" />
+                </VerticalStackLayout>
 
-        <!-- Main content -->
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Spacing="16" Padding="4">
-                <Label Text="SoFit" FontSize="18" TextColor="White" />
-                <Label Text="Welcome back" FontSize="14" TextColor="#CCCCCC" />
+                <!-- Today's Goal Card -->
+                <Frame BorderColor="#0088cc" CornerRadius="20" Padding="20" HasShadow="True" BackgroundColor="#0a4d80">
+                    <VerticalStackLayout Spacing="15">
+                        <HorizontalStackLayout Spacing="15">
+                            <Label Text="Today's Goal" FontSize="20" FontAttributes="Bold" TextColor="White" HorizontalOptions="FillAndExpand" />
+                            <Button Text="🎯" FontSize="20" BackgroundColor="Transparent" Padding="0" Clicked="OnGoalDetailsClicked" />
+                        </HorizontalStackLayout>
 
-                <Frame BackgroundColor="#0a0a0a" Padding="12" CornerRadius="8" HasShadow="False">
-                    <VerticalStackLayout Spacing="6">
-                        <Label Text="Today's Goal: 750 / 1000 calories" TextColor="White" />
+                        <Label Text="Progress" FontSize="14" TextColor="#cccccc" />
+                        <ProgressBar Progress="0.75" ProgressColor="#00d4ff" BackgroundColor="#003d5c" HeightRequest="8" />
+                        <Label Text="750 / 1000 calories burned" FontSize="12" TextColor="#999999" />
                     </VerticalStackLayout>
                 </Frame>
 
-                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="12" RowSpacing="8">
-                    <StackLayout Grid.Row="0" Grid.Column="0">
-                        <Label Text="Calories" FontSize="12" TextColor="#999999" />
-                        <Label Text="750" FontSize="16" TextColor="White" />
-                    </StackLayout>
+                <!-- Stats Grid -->
+                <Grid ColumnDefinitions="*,*" RowDefinitions="*,*" ColumnSpacing="15" RowSpacing="15">
 
-                    <StackLayout Grid.Row="0" Grid.Column="1">
-                        <Label Text="Steps" FontSize="12" TextColor="#999999" />
-                        <Label Text="8,432" FontSize="16" TextColor="White" />
-                    </StackLayout>
+                    <!-- Calories Card -->
+                    <Frame Grid.Row="0" Grid.Column="0" BorderColor="#444" CornerRadius="15" Padding="15" HasShadow="False" BackgroundColor="#2a2a2a">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="🔥 Calories" FontSize="14" TextColor="#999999" />
+                            <Label Text="750" FontSize="28" FontAttributes="Bold" TextColor="White" />
+                            <Label Text="📈 +12% from yesterday" FontSize="11" TextColor="#00d4ff" />
+                        </VerticalStackLayout>
+                    </Frame>
 
-                    <StackLayout Grid.Row="1" Grid.Column="0">
-                        <Label Text="Heart Rate" FontSize="12" TextColor="#999999" />
-                        <Label Text="72 bpm" FontSize="16" TextColor="White" />
-                    </StackLayout>
+                    <!-- Steps Card -->
+                    <Frame Grid.Row="0" Grid.Column="1" BorderColor="#444" CornerRadius="15" Padding="15" HasShadow="False" BackgroundColor="#2a2a2a">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="👟 Steps" FontSize="14" TextColor="#999999" />
+                            <Label Text="8,432" FontSize="28" FontAttributes="Bold" TextColor="White" />
+                            <Label Text="📈 +8% from yesterday" FontSize="11" TextColor="#00d4ff" />
+                        </VerticalStackLayout>
+                    </Frame>
 
-                    <StackLayout Grid.Row="1" Grid.Column="1">
-                        <Label Text="Workouts" FontSize="12" TextColor="#999999" />
-                        <Label Text="3 this week" FontSize="16" TextColor="White" />
-                    </StackLayout>
+                    <!-- Heart Rate Card -->
+                    <Frame Grid.Row="1" Grid.Column="0" BorderColor="#444" CornerRadius="15" Padding="15" HasShadow="False" BackgroundColor="#2a2a2a">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="❤️ Heart Rate" FontSize="14" TextColor="#999999" />
+                            <Label Text="72" FontSize="28" FontAttributes="Bold" TextColor="White" />
+                            <Label Text="BPM average" FontSize="11" TextColor="#999999" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Workouts Card -->
+                    <Frame Grid.Row="1" Grid.Column="1" BorderColor="#444" CornerRadius="15" Padding="15" HasShadow="False" BackgroundColor="#2a2a2a">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="💪 Workouts" FontSize="14" TextColor="#999999" />
+                            <Label Text="3" FontSize="28" FontAttributes="Bold" TextColor="White" />
+                            <Label Text="This week" FontSize="11" TextColor="#999999" />
+                        </VerticalStackLayout>
+                    </Frame>
+
                 </Grid>
+
+                <!-- Quick Actions -->
+                <VerticalStackLayout Spacing="0">
+                    <Label Text="Quick Actions" FontSize="18" FontAttributes="Bold" TextColor="White" />
+                    <Button Text="Start Workout" BackgroundColor="#00d4ff" TextColor="Black" FontAttributes="Bold" CornerRadius="12" Padding="20" Margin="0,10,0,0" Clicked="OnStartWorkoutClicked" />
+                    <Button Text="Log Activity" BackgroundColor="#333333" TextColor="White" FontAttributes="Bold" CornerRadius="12" Padding="20" Margin="0,10,0,0" Clicked="OnLogActivityClicked" />
+                </VerticalStackLayout>
+
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- Action buttons -->
-        <VerticalStackLayout Grid.Row="2" Spacing="8" Padding="0,8,0,0">
-            <Button Text="Start Workout" BackgroundColor="#5B2DF1" TextColor="White" CornerRadius="8" HeightRequest="48" Clicked="OnStartWorkoutClicked" />
-            <Button Text="Log Activity" BackgroundColor="#5B2DF1" TextColor="White" CornerRadius="8" HeightRequest="48" Clicked="OnLogActivityClicked" />
-        </VerticalStackLayout>
-=======
+        <!-- Bottom Navigation -->
+        <HorizontalStackLayout Grid.Row="1" Spacing="0" BackgroundColor="#1a1a1a" Padding="0" >
+            <Button x:Name="HomeBtn" Text="🏠 Home" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="#0a4d80" TextColor="White" CornerRadius="0" Clicked="OnNavHomeClicked" />
+            <Button x:Name="SplitBtn" Text="💪 Split" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Transparent" TextColor="#666666" CornerRadius="0" Clicked="OnNavSplitClicked" />
+            <Button x:Name="BoardBtn" Text="📊 Board" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Transparent" TextColor="#666666" CornerRadius="0" Clicked="OnNavBoardClicked" />
+            <Button x:Name="CalendarBtn" Text="📅 Calendar" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Transparent" TextColor="#666666" CornerRadius="0" Clicked="OnNavCalendarClicked" />
+            <Button x:Name="SettingsBtn" Text="⚙️ Settings" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Transparent" TextColor="#666666" CornerRadius="0" Clicked="OnNavSettingsClicked" />
+        </HorizontalStackLayout>
              BackgroundColor="#1a1a1a">
 
     <Grid RowDefinitions="*,70" RowSpacing="0">
