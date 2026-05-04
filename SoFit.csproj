@@ -74,13 +74,10 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 	</ItemGroup>
 
-<<<<<<< HEAD
 	<ItemGroup>
 	  <MauiXaml Update="SplitPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
-
-=======
->>>>>>> master
+	
 </Project>
