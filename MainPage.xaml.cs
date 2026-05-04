@@ -55,7 +55,7 @@ namespace SoFit
         private async void OnLogActivityClicked(object? sender, EventArgs e)
 >>>>>>> master
         {
-            await DisplayAlert("Log Activity", 
+            await DisplayAlert("Log Activity",
                 "Activity logged:\n\n" +
                 "• Activity: Morning Run\n" +
                 "• Duration: 30 minutes\n" +
