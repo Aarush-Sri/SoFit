@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SoFit.SettingsPage"
+             Title="Settings">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16">
+
+            <Label Text="Settings" FontSize="24" HorizontalOptions="Center" />
+
+            <!-- General -->
+            <Frame CornerRadius="8" Padding="12" HasShadow="True">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="General" FontAttributes="Bold" />
+                    <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+                        <Label Text="Dark Theme" VerticalOptions="Center" />
+                        <Switch x:Name="ThemeSwitch" Toggled="OnThemeToggled" HorizontalOptions="EndAndExpand" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Profile -->
+            <Frame CornerRadius="8" Padding="12" HasShadow="False">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Profile" FontAttributes="Bold" />
+                    <Entry x:Name="NameEntry" Placeholder="Name" />
+                    <Entry x:Name="AgeEntry" Placeholder="Age" Keyboard="Numeric" />
+                    <Entry x:Name="HeightEntry" Placeholder="Height (cm)" Keyboard="Numeric" />
+                    <Entry x:Name="WeightEntry" Placeholder="Weight (kg)" Keyboard="Numeric" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Notifications -->
+            <Frame CornerRadius="8" Padding="12" HasShadow="False">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Notifications" FontAttributes="Bold" />
+                    <HorizontalStackLayout Spacing="12">
+                        <Label Text="Workout Reminders" VerticalOptions="Center" />
+                        <Switch x:Name="RemindersSwitch" Toggled="OnNotificationsToggled" HorizontalOptions="EndAndExpand" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="12">
+                        <Label Text="Daily Motivation" VerticalOptions="Center" />
+                        <Switch x:Name="MotivationSwitch" Toggled="OnNotificationsToggled" HorizontalOptions="EndAndExpand" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Data & Privacy -->
+            <Frame CornerRadius="8" Padding="12" HasShadow="False">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Data &amp; Privacy" FontAttributes="Bold" />
+                    <Button Text="Backup Now" Clicked="OnBackupClicked" />
+                    <Button Text="Reset Data" Clicked="OnResetClicked" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- About -->
+            <Frame CornerRadius="8" Padding="12" HasShadow="False">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="About" FontAttributes="Bold" />
+                    <Label Text="SoFit v1.0.0" FontSize="12" TextColor="Gray" />
+                    <Label Text="Your Complete Fitness Companion" FontSize="12" TextColor="Gray" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Save Changes" Clicked="OnSaveClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
