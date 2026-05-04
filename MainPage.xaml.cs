@@ -54,35 +54,20 @@ namespace SoFit
         // Navigation - Home
         private async void OnNavHomeClicked(object sender, EventArgs e)
         {
-            HomeBtn.BackgroundColor = Color.FromArgb("#0a4d80");
-            HomeBtn.TextColor = Colors.White;
-            SplitBtn.BackgroundColor = Colors.Transparent;
-            SplitBtn.TextColor = Color.FromArgb("#666666");
-            BoardBtn.BackgroundColor = Colors.Transparent;
-            BoardBtn.TextColor = Color.FromArgb("#666666");
-            CalendarBtn.BackgroundColor = Colors.Transparent;
-            CalendarBtn.TextColor = Color.FromArgb("#666666");
-            SettingsBtn.BackgroundColor = Colors.Transparent;
-            SettingsBtn.TextColor = Color.FromArgb("#666666");
-
             await DisplayAlert("Home", "You are already on the Home page", "OK");
         }
 
-        // Navigation - Split (Workout Split)
+        // Navigation - Split (opens SplitPage)
         private async void OnNavSplitClicked(object sender, EventArgs e)
         {
-            string result = await DisplayActionSheet("Workout Splits",
-                "Cancel",
-                null,
-                "Push/Pull/Legs",
-                "Upper/Lower",
-                "Full Body",
-                "PPL Advanced",
-                "View Custom Split");
-
-            if (!string.IsNullOrEmpty(result) && result != "Cancel")
+            // Navigate to SplitPage if navigation is available
+            if (this.Navigation != null)
             {
-                await DisplayAlert("Workout Split", $"Selected: {result}\n\nLoading split details...", "OK");
+                await Navigation.PushAsync(new SplitPage());
+            }
+            else
+            {
+                await DisplayAlert("Split", "Could not navigate to Split page.", "OK");
             }
         }
 
