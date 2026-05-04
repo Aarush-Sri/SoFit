@@ -13,5 +13,6 @@ public class LeaderboardViewModel
         Users.Add(new User { Name = "Alice", Score = 1200 });
         Users.Add(new User { Name = "Bob", Score = 1100 });
         Users.Add(new User { Name = "Charlie", Score = 900 });
+        Users.Add(new User { Name = "Shawn", Score = 810 });
     }
 }
