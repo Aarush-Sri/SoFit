@@ -6,7 +6,7 @@ namespace SoFit
     {
         public BoardPage()
         {
-            Title = "Board";
+            Title = "Board:";
             Content = new Label
             {
                 Text = "Board page content goes here.",
