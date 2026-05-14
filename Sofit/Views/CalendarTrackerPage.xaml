@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Sofit.ViewModels"
+             x:Class="Sofit.Views.CalendarTrackerPage"
+             Title="Calendar Tracker">
+    <ContentPage.BindingContext>
+        <vm:CalendarTrackerViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+        <Label Text="Calendar Tracker" FontSize="24" HorizontalOptions="Center" />
+        <Label Text="Select a date to see tracked workouts (placeholder)" />
+        <CollectionView ItemsSource="{Binding Entries}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" Padding="10">
+                        <StackLayout>
+                            <Label Text="{Binding Date, StringFormat='{0:yyyy-MM-dd}'}" />
+                            <Label Text="{Binding Notes}" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
