@@ -1,8 +1,5 @@
 ﻿using Microsoft.Maui.Controls;
-<<<<<<< HEAD
-=======
 using Microsoft.Maui.Graphics;
->>>>>>> master
 
 namespace SoFit
 {
@@ -13,10 +10,8 @@ namespace SoFit
             InitializeComponent();
         }
 
-<<<<<<< HEAD
-        // Start Workout Popup
-        private async void OnStartWorkoutClicked(object sender, EventArgs e)
-=======
+        //private async void OnStartWorkoutClicked(object sender, EventArgs e)
+
         // Goal Details Popup
         private async void OnGoalDetailsClicked(object? sender, EventArgs e)
         {
@@ -31,7 +26,6 @@ namespace SoFit
 
         // Start Workout Popup
         private async void OnStartWorkoutClicked(object? sender, EventArgs e)
->>>>>>> master
         {
             string result = await DisplayActionSheet("Select Workout Type",
                 "Cancel",
@@ -49,11 +43,7 @@ namespace SoFit
         }
 
         // Log Activity Popup
-<<<<<<< HEAD
-        private async void OnLogActivityClicked(object sender, EventArgs e)
-=======
         private async void OnLogActivityClicked(object? sender, EventArgs e)
->>>>>>> master
         {
             await DisplayAlert("Log Activity",
                 "Activity logged:\n\n" +
@@ -63,9 +53,6 @@ namespace SoFit
                 "Great work! Keep it up! 💪",
                 "OK");
         }
-<<<<<<< HEAD
-        // navigation features removed - main page simplified
-=======
 
         // Navigation - Home
         private async void OnNavHomeClicked(object? sender, EventArgs e)
